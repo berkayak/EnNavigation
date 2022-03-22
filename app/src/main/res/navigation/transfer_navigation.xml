@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transfer_navigation"
+    app:startDestination="@id/transferTypeSelectionFragment">
+
+    <fragment
+        android:id="@+id/transferTypeSelectionFragment"
+        android:name="com.berkayak.ennavigation.TransferTypeSelectionFragment"
+        android:label="TransferTypeSelectionFragment" >
+        <action
+            android:id="@+id/toAccountSelection"
+            app:destination="@id/senderAccountSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/senderAccountSelectionFragment"
+        android:name="com.berkayak.ennavigation.SenderAccountSelectionFragment"
+        android:label="SenderAccountSelectionFragment" >
+
+        <argument
+            android:name="transferOperationData"
+            app:nullable="true"
+            app:argType="com.berkayak.ennavigation.model.TransferOperationData" />
+
+        <action
+            android:id="@+id/toReceiverSelection"
+            app:destination="@id/receiverAccountSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiverAccountSelectionFragment"
+        android:name="com.berkayak.ennavigation.ReceiverAccountSelectionFragment"
+        android:label="ReceiverAccountSelectionFragment">
+
+        <argument
+            android:name="transferOperationData"
+            app:nullable="true"
+            app:argType="com.berkayak.ennavigation.model.TransferOperationData" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.berkayak.ennavigation.FirstFragment"
+        android:label="FirstFragment">
+        <argument
+            android:name="param1"
+            app:argType="string"
+            android:defaultValue=""
+            app:nullable="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.berkayak.ennavigation.SecondFragment"
+        android:label="SecondFragment">
+        <argument
+            android:name="param1"
+            app:argType="string"
+            android:defaultValue=""
+            app:nullable="true"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/deeplink_navigation"
+    app:startDestination="@id/secondFragmentDeeplinker">
+
+
+    <fragment
+        android:id="@+id/firstFragmentDeeplinker"
+        android:name="com.berkayak.ennavigation.FirstFragment"
+        android:label="FirstFragmentDeeplinker">
+        <argument
+            android:name="param1"
+            app:argType="string"
+            android:defaultValue="deger yok"
+            app:nullable="true"/>
+        <deepLink
+            app:uri="http://enpara.com/bireysel/{param1}" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragmentDeeplinker"
+        android:name="com.berkayak.ennavigation.SecondFragment"
+        android:label="SecondFragment">
+        <argument
+            android:name="param1"
+            app:argType="string"
+            android:defaultValue="no value"
+            app:nullable="true"/>
+        <deepLink
+            app:uri="http://enpara.com/kobi/{param1}" />
+    </fragment>
+</navigation>
